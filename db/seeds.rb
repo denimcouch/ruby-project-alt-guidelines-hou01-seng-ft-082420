@@ -4,7 +4,7 @@ Genre.delete_all
 Album.delete_all
 #User.delete_all
 
-drake = Artist.create(name: "Drake", location: "Los Angeles")
+flatbush = Artist.create(name: "Flatbush Zombies", location: "New York City")
 equip = Artist.create(name: "Equip", location: "Chicago")
 adele = Artist.create(name: "Adele", location: "England")
 kendrick = Artist.create(name: "Kendrick Lamar", location:"Compton, LA")
@@ -15,7 +15,6 @@ ta_ku = Artist.create(name: "Ta-ku", location: "Australia")
 anthony_hamilton = Artist.create(name: "Anthony Hamilton", location: "North Carolina")
 gary_clark_jr = Artist.create(name: "Gary Clark Jr.", location: "Austin")
 dj_screw = Artist.create(name: "DJ Screw", location: "Houston")
-
 
 pop = Genre.create(name: "Pop")
 rap = Genre.create(name: "Rap")
@@ -28,6 +27,7 @@ rnb = Genre.create(name: "R&B")
 rock = Genre.create(name: "Rock")
 
 
+laced_odyssey = Album.create(name: "3001: A Laced Odyssey", artist: flatbush)
 good_kid = Album.create(name: "Good Kid, maad City", artist: kendrick)
 cursebreaker = Album.create(name: "Cursebreaker X", artist: equip)
 twenty_five = Album.create(name: "25", artist: adele)
@@ -41,7 +41,10 @@ this_land = Album.create(name: "This Land", artist: gary_clark_jr, genre: rock)
 june_27 = Album.create(name: "June 27", artist: dj_screw, genre: rap)
 
 
-hotline_bling = Song.create(name:"Hotline Bling", artist: drake, genre: rap)
+trade_off = Song.create(name: "Trade-Off", artist: flatbush, genre: rap, album: laced_odyssey)
+rip_cd = Song.create(name: "R.I.P.C.D.", artist: flatbush, genre: rap, album: laced_odyssey)
+money_trees = Song.create(name:"Money Trees", artist: kendrick, album: good_kid, genre: rap)
+poetic_justice = Song.create(name: "Poetic Justice", artist: kendrick, album: good_kid, genre: rap)
 shop = Song.create(name: "Shop Inventory", artist: equip, album: cursebreaker, genre: vaporwave)
 shadow_dancer = Song.create(name: "Shadow Dancer", artist: equip, album: cursebreaker, genre: vaporwave)
 hello = Song.create(name: "Hello", artist: adele, genre: pop, album: twenty_five)
@@ -54,6 +57,8 @@ love_again = Song.create(name: "Love Again", artist: ta_ku, genre: electronic)
 cant_let_go = Song.create(name: "Can't Let Go", artist: anthony_hamilton, genre: rnb)
 pearl_cadillac = Song.create(name: "Pearl Cadillac", artist: gary_clark_jr, genre: rock)
 leanin = Song.create(name: "Leanin...", artist: dj_screw, genre: rap)
+chasing_pavements = Song.create(name: "Chasing Pavements", artist: adele, genre: pop, album: nineteen)
+
 
 # alex = User.create(user_name: "Alex", location: "Houston")
 # haley = User.create(user_name: "Haley", location: "Austin")
