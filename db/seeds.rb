@@ -2,7 +2,7 @@ Artist.delete_all
 Song.delete_all
 Genre.delete_all
 Album.delete_all
-#User.delete_all
+User.delete_all
 
 flatbush = Artist.create(name: "Flatbush Zombies", location: "New York City")
 equip = Artist.create(name: "Equip", location: "Chicago")
@@ -37,8 +37,8 @@ diaspora = Album.create(name: "Diaspora", artist: goldlink)
 busy_essentials = Album.create(name: "Busy Signal Essentials", artist: busy_signal)
 songs_to_make_up_to = Album.create(name: "Songs to Make up To", artist: ta_ku)
 aint_nothing_worryin = Album.create(name: "Ain't Nothing Worryin'", artist: anthony_hamilton)
-this_land = Album.create(name: "This Land", artist: gary_clark_jr, genre: rock)
-june_27 = Album.create(name: "June 27", artist: dj_screw, genre: rap)
+this_land = Album.create(name: "This Land", artist: gary_clark_jr)
+june_27 = Album.create(name: "June 27", artist: dj_screw)
 
 
 trade_off = Song.create(name: "Trade-Off", artist: flatbush, genre: rap, album: laced_odyssey)
@@ -60,5 +60,5 @@ leanin = Song.create(name: "Leanin...", artist: dj_screw, genre: rap)
 chasing_pavements = Song.create(name: "Chasing Pavements", artist: adele, genre: pop, album: nineteen)
 
 
-# alex = User.create(user_name: "Alex", location: "Houston")
-# haley = User.create(user_name: "Haley", location: "Austin")
+alex = User.create(user_name: "Alex", location: "Houston")
+haley = User.create(user_name: "Haley", location: "Austin")
