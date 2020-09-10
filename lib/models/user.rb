@@ -1,7 +1,14 @@
 class User < ActiveRecord::Base
-    has_many :songs
-    # has_many :albums, through: :songs
-    
+    has_many :purchases
+    has_many :songs, through: :purchases
+    #---------------create methods--------------#
+    def buy_song(name)
+        desired_song = Song.find_by(name: name)
+        Purchase.create(song_id:desired_song.id, user_id: self.id)
+        artist = Artist.find_by(id: desired_song.artist_id)
+        "Thank you for purchasing #{desired_song.name} by #{artist.name}, #{self.user_name}!"
+    end
+    #---------------read methods----------------#
     def find_artist_by_name(name)
         Artist.all.select{|artist| artist.name == name}
     end
@@ -10,10 +17,7 @@ class User < ActiveRecord::Base
     end
     def find_songs_by_genre(genre_name)
         genre = Genre.all.find_by(name: genre_name)
-        Song.all.select{|song| 
-            #binding.pry
-            song.genre_id == genre.id
-        }
+        Song.all.select{|song| song.genre_id == genre.id}
     end
     def find_artist_by_genre(genre_name)
         genre = Genre.all.find_by(name: genre_name)
