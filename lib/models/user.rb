@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
     has_many :purchases
+    has_many :playlists
     has_many :songs, through: :purchases
     #---------------create methods--------------#
     def buy_song(name)
@@ -16,11 +17,11 @@ class User < ActiveRecord::Base
         Artist.all.select{|artist| artist.location == location}
     end
     def find_songs_by_genre(genre_name)
-        genre = Genre.all.find_by(name: genre_name)
+        genre = Genre.find_by(name: genre_name)
         Song.all.select{|song| song.genre_id == genre.id}
     end
     def find_artist_by_genre(genre_name)
-        genre = Genre.all.find_by(name: genre_name)
+        genre = Genre.find_by(name: genre_name)
         songs_in_genre = Song.all.select{|song| song.genre_id == genre.id}
         artist_ids = songs_in_genre.collect{|song| song.artist_id}
         artists = Artist.all.select{|artist| artist_ids.any? artist.id}
