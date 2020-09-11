@@ -9,6 +9,12 @@ class User < ActiveRecord::Base
         artist = Artist.find_by(id: desired_song.artist_id)
         "Thank you for purchasing #{desired_song.name} by #{artist.name}, #{self.user_name}!"
     end
+    def buy_album(name)
+        desired_album = Album.find_by(name: name)
+        Purchase.create(user_id: self.id, album_id: desired_album.id)
+        artist = Artist.find_by(id: desired_album.artist_id)
+        "Thank you for purchasing #{desired_album.name} by #{artist.name}, ##{self.user_name}!"
+    end
     #---------------read methods----------------#
     def find_artist_by_name(name)
         Artist.all.select{|artist| artist.name == name}
