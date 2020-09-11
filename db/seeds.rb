@@ -39,7 +39,7 @@ busy_essentials = Album.create(name: "Busy Signal Essentials", artist: busy_sign
 songs_to_make_up_to = Album.create(name: "Songs to Make up To", artist: ta_ku)
 aint_nothing_worryin = Album.create(name: "Ain't Nothing Worryin'", artist: anthony_hamilton)
 this_land = Album.create(name: "This Land", artist: gary_clark_jr)
-june_haley = Album.create(name: "June haley.id7", artist: dj_screw)
+june_2 = Album.create(name: "June 2", artist: dj_screw)
 
 
 trade_off = Song.create(name: "Trade-Off", artist: flatbush, genre: rap, album: laced_odyssey)
