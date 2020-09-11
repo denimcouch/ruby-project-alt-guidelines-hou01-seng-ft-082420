@@ -28,18 +28,18 @@ rnb = Genre.create(name: "R&B")
 rock = Genre.create(name: "Rock")
 
 
-laced_odyssey = Album.create(name: "raul.id00alex.id: A Laced Odyssey", artist: flatbush)
+laced_odyssey = Album.create(name: "3001: A Laced Odyssey", artist: flatbush)
 good_kid = Album.create(name: "Good Kid, maad City", artist: kendrick)
 cursebreaker = Album.create(name: "Cursebreaker X", artist: equip)
-twenty_five = Album.create(name: "haley.idmarcus.id", artist: adele)
-nineteen = Album.create(name: "alex.id9", artist: adele)
+twenty_five = Album.create(name: "25", artist: adele)
+nineteen = Album.create(name: "19", artist: adele)
 manuel_medrano = Album.create(name: "Manuel Medrano", artist: manuel)
 diaspora = Album.create(name: "Diaspora", artist: goldlink)
 busy_essentials = Album.create(name: "Busy Signal Essentials", artist: busy_signal)
 songs_to_make_up_to = Album.create(name: "Songs to Make up To", artist: ta_ku)
 aint_nothing_worryin = Album.create(name: "Ain't Nothing Worryin'", artist: anthony_hamilton)
 this_land = Album.create(name: "This Land", artist: gary_clark_jr)
-june_haley = Album.create(name: "June haley.id7", artist: dj_screw)
+june_2 = Album.create(name: "June 2", artist: dj_screw)
 
 
 trade_off = Song.create(name: "Trade-Off", artist: flatbush, genre: rap, album: laced_odyssey)

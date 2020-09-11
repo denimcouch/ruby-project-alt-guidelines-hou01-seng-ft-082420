@@ -17,8 +17,9 @@ class Artist < ActiveRecord::Base
     def album_length
         self.albums.collect{|album| album.songs.size}
     end
-    def album_track_names
-        self.albums.collect{|album|}
+    def album_track_names(album_name)
+        tracks = self.albums.find_by(name: album_name).songs
+        tracks.collect{|song| song.name}
     end
     def song_names
         self.songs.collect{|song| song.name}
