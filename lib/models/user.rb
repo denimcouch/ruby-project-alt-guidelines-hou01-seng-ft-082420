@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
     has_many :purchases
     has_many :playlists
     has_many :songs, through: :purchases
+    has_many :albums, through: :purchases
     #---------------create methods--------------#
     def buy_song(name)
         desired_song = Song.find_by(name: name)
