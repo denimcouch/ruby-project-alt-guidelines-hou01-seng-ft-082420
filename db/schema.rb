@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 11) do
     t.string "name"
   end
 
+  create_table "purchases", force: :cascade do |t|
+    t.integer "song_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.integer "artist_id"

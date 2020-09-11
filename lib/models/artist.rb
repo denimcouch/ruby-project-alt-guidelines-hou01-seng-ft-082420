@@ -2,7 +2,7 @@ class Artist < ActiveRecord::Base
     has_many :songs
     has_many :genres, through: :songs
     has_many :albums
-#------------creation methods-------#
+#------------create methods-------#
     def release_album(name)
         Album.create(name: name, artist: self)
     end
@@ -29,14 +29,14 @@ class Artist < ActiveRecord::Base
          album = self.albums.find_by(name: album_name) 
          album.songs.push(song)
     end
-#-----------delete methods-----------#
+#-----------destroy methods-----------#
     def remove_album(name)
         album = self.albums.find_by(name: name)
-        album.delete
+        album.delete.save
     end
     def remove_song(name)
         song = self.songs.find_by(name: name)
-        song.delete
+        song.delete.save
     end
 
 end
