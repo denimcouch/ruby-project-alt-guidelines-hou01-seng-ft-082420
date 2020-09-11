@@ -32,11 +32,11 @@ class Artist < ActiveRecord::Base
 #-----------destroy methods-----------#
     def remove_album(name)
         album = self.albums.find_by(name: name)
-        album.delete
+        album.delete.save
     end
     def remove_song(name)
         song = self.songs.find_by(name: name)
-        song.delete
+        song.delete.save
     end
 
 end
